@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+
+# Data processing
+pandas
+numpy
+
+# Data visualization
+plotly
+
+# Database
+sqlalchemy
+psycopg[binary]
