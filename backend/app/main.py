@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-from app.api import dashboard
 
 app = FastAPI(
     title="MBI API",
@@ -7,12 +6,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.include_router(
-    dashboard.router,
-    prefix="/api/dashboard",
-    tags=["Dashboard"]
-)
-
+@app.get("/")
+def test():
+    return {"message": "Welcome to the MBI API"}
 
 @app.get("/health")
 def health_check():
